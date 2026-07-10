@@ -27,7 +27,10 @@ if ingredients_list:
     for fruit_chosen in ingredients_list:
       ingredients_string += fruit_chosen + ' '
       st.subheader(fruit_chosen + ' Nutrition Information')
-      smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
+      fruit = str(fruit_chosen).strip()          # kill stray whitespace/newlines
+      url = f'https://my.smoothiefroot.com/api/fruit/{fruit}'
+      st.write("Requesting:", repr(url))         # <-- shows the EXACT string, brackets and all
+      smoothiefroot_response = requests.get(url)
       sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     my_insert_stmt = """ insert into 
