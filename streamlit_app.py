@@ -38,7 +38,7 @@ if ingredients_list:
       st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
       
       st.subheader(fruit_chosen + ' Nutrition Information')
-      fruit = str(fruit_chosen).strip()          # kill stray whitespace/newlines
+      # fruit = str(fruit_chosen).strip()          # kill stray whitespace/newlines
       url = f'https://my.smoothiefroot.com/api/fruit/{search_on}'
       st.write("Requesting:", repr(url))         # <-- shows the EXACT string, brackets and all
       smoothiefroot_response = requests.get(url)
