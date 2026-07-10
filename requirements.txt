@@ -3,3 +3,4 @@ snowflake-snowpark-python
 streamlit
 requests
 pandas
+pyarrow==19.0.0
