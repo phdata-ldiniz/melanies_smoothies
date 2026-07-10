@@ -39,7 +39,7 @@ if ingredients_list:
       
       st.subheader(fruit_chosen + ' Nutrition Information')
       fruit = str(fruit_chosen).strip()          # kill stray whitespace/newlines
-      url = f'https://my.smoothiefroot.com/api/fruit/{fruit}'
+      url = f'https://my.smoothiefroot.com/api/fruit/{search_on}'
       st.write("Requesting:", repr(url))         # <-- shows the EXACT string, brackets and all
       smoothiefroot_response = requests.get(url)
       sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
